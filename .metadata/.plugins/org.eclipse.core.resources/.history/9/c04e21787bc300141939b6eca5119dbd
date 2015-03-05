@@ -1,0 +1,12 @@
+var page3fn = function(apparg, page2arg){
+
+	
+	
+	console.log(lat1,lng1);
+	var url = "http://api.wunderground.com/api/d0597510b3186fce/conditions/q/" + lat1 + ","  + lng1 + ".json" ;
+	console.log(url);
+	
+
+	
+};
+exports.page3fn = page3fn;

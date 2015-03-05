@@ -1,0 +1,7 @@
+var fromAppJs = function (arg1){
+	console.log("page2 accessed");
+	console.log(arg1);
+};
+
+
+exports.fromAppJs = fromAppJs;

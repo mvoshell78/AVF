@@ -1,0 +1,67 @@
+Ti.UI.setBackgroundColor("blue");
+var url = 'http://api.wunderground.com/api/d0597510b3186fce/conditions/q/DE/Dover.json';
+
+// gets api creats json from api
+
+var remoteResponce = function(e){
+	
+	var json = JSON.parse(this.responseText);
+	var city = json.current_observation.display_location.city;
+	var temp = parseInt(json.current_observation.temp_f +"°";
+	var weat = json.current_observation.weather;
+	var hum = json.current_observation.relative_humidity;
+	var chill = json.current_observation.windchill_f + "°";
+	var dir = json.current_observation.wind_dir;
+	var mph = json.current_observation.wind_mph;
+	var gust = json.current_observation.wind_gust_mph;
+	
+	var tempLabel = Ti.UI.createLabel({
+	text : temp,
+	font: {fontSize: 50, fontFamily: "Baskerville", fontStyle: "italic"  }
+});
+
+var tempView = Ti.UI.createView({
+	backgroundColor : "#71A1D0",
+	top : 50,
+	
+	
+});
+	var win1 = Ti.UI.createWindow({
+	backgroundColor :("#71A1D0"),
+	layout : "vertical"
+});
+	tempView.add(tempLabel);
+	win1.add(tempView);
+	win1.open();
+	
+	
+	console.log(city, temp, weat,hum,chill,dir,mph,gust);
+};
+
+
+// error for xhr 
+var remoteError = function(e){
+	Ti.API.debug(status = this.status);
+	Ti.API.debug(text = this.responceText);
+	Ti.API.debug(error= e.error);
+};
+// xhr looks for api
+var xhr = Ti.Network.createHTTPClient({
+	onload :  remoteResponce, 
+	onError: remoteError, 
+	timeout : 5000
+	
+});
+
+
+
+// labels 
+/*
+*/
+// window for app
+
+xhr.open("GET", url);
+xhr.send();
+//
+console.log(Ti.Network.online);
+

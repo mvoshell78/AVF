@@ -1,0 +1,8 @@
+// geo 48
+
+var getGeo = function(){
+	console.log("getGeo");
+	
+};
+exports.getGeo = getGeo;
+

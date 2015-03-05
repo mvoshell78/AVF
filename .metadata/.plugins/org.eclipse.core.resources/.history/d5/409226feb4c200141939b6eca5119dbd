@@ -1,0 +1,22 @@
+Ti.UI.setBackgroundColor("blue");
+var remoteResponce = function(){
+	Ti.API.debug(this.responcetext);
+};
+
+var xhr = Ti.Network.createHTTPClient({
+	onload :  remoteResponce, 
+	onError: error, 
+	timeout : 5000
+	
+});
+
+
+
+var win1 = Ti.UI.createWindow({
+	backgroundColor :("#71A1D0"),
+	layout : "vertical"
+});
+
+win1.open();
+
+

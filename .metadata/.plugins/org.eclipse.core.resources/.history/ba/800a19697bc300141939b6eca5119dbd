@@ -1,0 +1,10 @@
+var fromAppJs = function (arg1){
+	console.log("page2 accessed");
+	console.log(arg1);
+	var page2txt = "from page 2";
+	var page3 = require("page3");
+	page3.page3fn(page2txt, arg1);
+};
+
+
+exports.fromAppJs = fromAppJs;

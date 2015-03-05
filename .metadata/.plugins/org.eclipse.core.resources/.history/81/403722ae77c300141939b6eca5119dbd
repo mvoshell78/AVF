@@ -1,0 +1,5 @@
+var page3fn = function(newArg){
+	
+	
+};
+exports.page3fn = page3fn;

@@ -1,0 +1,21 @@
+Ti.UI.setBackgroundColor("blue");
+
+var win1 = Ti.UI.createWindow({
+	backgroundColor :("#71A1D0"),
+	layout : "vertical"
+});
+
+win1.open();
+
+
+var runGeo = function(){
+	Ti.Geolocation.purpose = "Your location is needed to gather lat/long coords."; 
+	Ti.Geolocation.getCurrentPosition(function(e){
+		var lat = e.coords.latitude;
+		var lng = e.coords.longitude;
+		
+		console.log(lat,lng);
+	});
+};
+
+//exports.runGeoCode = runGeo;

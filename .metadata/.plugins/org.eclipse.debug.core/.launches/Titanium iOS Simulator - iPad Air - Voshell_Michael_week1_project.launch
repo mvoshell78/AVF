@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.appcelerator.titanium.mobile.ui.ios.simulator.launchConfigurationType">
+<stringAttribute key="ATTR_PROJECT_NAME" value="Voshell_Michael_week1_project"/>
+<stringAttribute key="device_id" value="B2F0FB09-0A66-4CC3-8B33-98E67C26BD03"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Voshell_Michael_week1_project"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<stringAttribute key="process_factory_id" value="com.appcelerator.titanium.ui.logLevelFilteringProcessFactory"/>
+<stringAttribute key="sdk_version" value="8.1"/>
+<stringAttribute key="simulator_version" value="8.1"/>
+</launchConfiguration>

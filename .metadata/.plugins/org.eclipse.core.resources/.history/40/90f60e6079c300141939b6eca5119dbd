@@ -1,0 +1,32 @@
+// geo 48
+
+var getGeo = function(){
+	console.log("Geo is working!");
+	Ti.Geolocation.purpose = "Weather would like to use your Geolocation";
+	Ti.Geolocation.getCurrentPosition(function(e){
+		console.log(e);
+		if (Ti.Platform.osname === "android") {
+			console.log("These aren't the droids your looking for");
+			var lat = 39.1;
+			var lng = -75.4;
+			
+			
+		} else {
+			console.log("An apple a day, keeps the doctor away!");
+			
+			var lat = e.coords.latitude;
+			var lng = e.coords.longitude;
+			var urlReq = require("weatherApi");
+			weatherApi.createUrl(lat,lng);
+			
+			
+		
+		}
+	});
+	
+};
+
+
+
+exports.getGeo = getGeo;
+

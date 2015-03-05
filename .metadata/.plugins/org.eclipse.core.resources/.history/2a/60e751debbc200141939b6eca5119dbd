@@ -1,0 +1,36 @@
+Ti.UI.setBackgroundColor("blue");
+var url = 'http://api.wunderground.com/api/d0597510b3186fce/conditions/q/DE/Dover.json';
+
+var remoteResponce = function(){
+	
+	var json = JSON.parse(this.responseText);
+	var city = json.response.current_observation;
+	var location = json.location;
+	console.log(json, city);
+};
+
+var remoteError = function(e){
+	Ti.API.debug(status = this.status);
+	Ti.API.debug(text = this.responceText);
+	Ti.API.debug(error= e.error);
+};
+
+var xhr = Ti.Network.createHTTPClient({
+	onload :  remoteResponce, 
+	onError: remoteError, 
+	timeout : 5000
+	
+});
+
+
+
+var win1 = Ti.UI.createWindow({
+	backgroundColor :("#71A1D0"),
+	layout : "vertical"
+});
+
+xhr.open("GET", url);
+xhr.send();
+win1.open();
+console.log(Ti.Network.online);
+

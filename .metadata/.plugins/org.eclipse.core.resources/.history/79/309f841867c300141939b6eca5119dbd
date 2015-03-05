@@ -1,0 +1,29 @@
+var geo = require(geo);
+
+var weatherApi = function(lat, lng){
+	console.log("Weather working");
+	console.log(lat, lng);
+	// xhr looks for api
+	var xhr = Ti.Network.createHTTPClient({
+		onload :  function(){
+			var json = json.parse(this.responceText);
+			console.log(json);
+			var weatherData = {
+				city = json.current_observation.display_location.city,
+				temp = parseInt(json.current_observation.temp_f) +"° ",
+				weat = json.current_observation.weather,
+				hum = json.current_observation.relative_humidity;
+				chill = json.current_observation.windchill_f + "° ",
+				dir = json.current_observation.wind_dir,
+				mph = json.current_observation.wind_mph,
+				gust = json.current_observation.wind_gust_mph,
+				img = json.current_observation.image.url,
+				
+			};
+			console.log("weatherData: ") + JSON.stringify(weatherData));
+			ui.buildUI(weatherData);
+			console.log(weatherData.lng);
+			console.log(weatherData.lng.substring(0,7));
+			console.log(weatherData.latsubstring(0,7));
+				
+				}; 

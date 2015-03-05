@@ -1,0 +1,37 @@
+Ti.UI.setBackgroundColor("blue");
+var url = "http://api.wunderground.com/api/d0597510b3186fce/forecast/";
+
+var win1 = Ti.UI.createWindow({
+	backgroundColor :("#71A1D0"),
+	layout : "vertical"
+});
+
+win1.open(runGeo);
+//var ui = require("ui");
+var url = "http://api.wunderground.com/api/d0597510b3186fce/forecast/";
+if (Ti.Network.online) {
+     var getData = Ti.Network.createHTTPClient();
+     getData.onload = function(e){
+          var json = JSON.parse(this.responseText);
+          var forecast = json.forecast;
+          var location = json.location;
+          console.log(forecast, location);
+         // ui.buildUi(forecast, location);
+     }; //getData.onload closing
+     getData.open("GET", url);
+     getData.send();
+} else {
+     alert("Network currently unavailable.");
+}; // if else Ti.Network closing
+
+var runGeo = function(){
+	Ti.Geolocation.purpose = "Your location is needed to gather lat/long coords."; 
+	Ti.Geolocation.getCurrentPosition(function(e){
+		var lat = e.coords.latitude;
+		var lng = e.coords.longitude;
+		
+		console.log(e.coords.latitude,e.coords.longitude);
+	});
+};
+
+//exports.runGeoCode = runGeo;
