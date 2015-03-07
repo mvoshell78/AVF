@@ -6969,3 +6969,35 @@ Caused by: java.io.IOException: error=7, Argument list too long
 	at java.lang.ProcessImpl.start(ProcessImpl.java:91)
 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:452)
 	... 17 more
+
+!ENTRY org.eclipse.core.resources 4 568 2015-03-06 19:02:27.751
+!MESSAGE Could not write metadata for '/weather'.
+!STACK 0
+java.io.FileNotFoundException: /Users/Mich/Desktop/AVF/.metadata/.plugins/org.eclipse.core.resources/.projects/weather/1.tree (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:194)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:145)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.writeTree(SaveManager.java:2052)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1179)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:203)
+	at com.aptana.git.core.GitProjectRefresher$1.runInWorkspace(GitProjectRefresher.java:138)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2015-03-06 19:02:47.970
+!MESSAGE Could not write metadata for '/weather'.
+!STACK 0
+java.io.FileNotFoundException: /Users/Mich/Desktop/AVF/.metadata/.plugins/org.eclipse.core.resources/.projects/weather/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:192)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:116)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

@@ -12,8 +12,8 @@ var getGeo = function(){
 			console.log(lat,lng);
 			var url = "http://api.wunderground.com/api/d0597510b3186fce/conditions/q/" + lat + ","  + lng + ".json";
 			console.log(url);
-			var weatherApi = require("weatherApi");
-				weatherApi.createUrl(url);
+			var weatherapi = require("weatherapi");
+				weatherapi.createUrl(url);
 			
 		} else {
 			console.log("An apple a day, keeps the doctor away!");
@@ -23,8 +23,8 @@ var getGeo = function(){
 			console.log("apple",lat,lng);
 			var url = "http://api.wunderground.com/api/d0597510b3186fce/conditions/q/" + lat + ","  + lng + ".json";
 			console.log(url);
-			var weatherApi = require("weatherApi");
-				weatherApi.createUrl(url);
+			var weatherapi = require("weatherapi");
+				weatherapi.createUrl(url);
 			
 		}
 	});

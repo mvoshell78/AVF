@@ -1,9 +1,11 @@
 =run
-LAST_LAUNCH_TIMESTAMP=1425499894385
+LAST_LAUNCH_TIMESTAMP=1425684952690
 Voshell_Michael_week1_project\:launchMode=run
-Voshell_Michael_week1_project\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.B2F0FB09-0A66-4CC3-8B33-98E67C26BD03
+Voshell_Michael_week1_project\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.simulator.launchShortcut.GalaxyNexus
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103
 test\:launchMode=run
 test\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.9728FF25-51F5-4249-8BAB-8E02B76B4888
+weather\:launchMode=run
+weather\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.CEE14CF2-491A-4F50-926A-1AE3FD514C1B
