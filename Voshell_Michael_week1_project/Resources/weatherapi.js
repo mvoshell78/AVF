@@ -23,62 +23,182 @@ var remoteResponce = function(){
 	var gust = json.current_observation.wind_gust_mph;
 	var icon = json.current_observation.icon_url;
 	
+	
+	
+	if (Ti.Platform.osname === "android") {
 		
+
 	var iconView = Ti.UI.createImageView({
 		image : icon,
-		top : 125
+		top : 125,
+		height : 75
 	});
 	var tempLabel = Ti.UI.createLabel({
 	text : temp,
-	font: {fontSize: 100, fontFamily: "Baskerville" },
-	top : 170,
-	left : (pageWidth /2) - 50
+	font: {fontSize: 100, fontFamily: "Roboto-Thin" },
+	color : "black"
+	
+	
+});
+	var cityLabel = Ti.UI.createLabel({
+	text : city,
+	font: {fontSize: 35, fontFamily: "Roboto-Thin"  },
+	top: 35,
+	color : "black"
+});
+	var weatLabel = Ti.UI.createLabel({
+	text : " Currently " + weat  ,
+	font: {fontSize:  20, fontFamily: "Roboto-Thin"},
+	top: 90,
+	color : "black"
+	
+});
+	var humLabel = Ti.UI.createLabel({
+	text : hum +" Humidity",
+	font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+	bottom : 110,
+	right : 20,
+	color : "black"
+	
+});
+	var chillLabel = Ti.UI.createLabel({
+	text : "Feels like " + chill ,
+	font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+	bottom : 80,
+	right : 20,
+	color : "black"
+	
+});
+	var dirLabel = Ti.UI.createLabel({
+	text : "Winds out of " + dir,
+	font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+	bottom : 110,
+	left : 20,
+	color : "black"
+	
+});
+	var mphLabel = Ti.UI.createLabel({
+	text : mph + " Mph",
+	font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+	bottom: 80,
+	left : 20,
+	color : "black"
+	
+});
+	var gustLabel = Ti.UI.createLabel({
+	text : "Gusting up to " + gust + " Mph",
+	font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+	bottom : 50,
+	left : 20,
+	color : "black"
+	
+});
+
+
+	var weatherView = Ti.UI.createView({
+	backgroundColor : "#7AC5CD",
+	layout : "vertical"
+});
+	var tempView = Ti.UI.createView ({
+	backgroundColor : "#E6F3F7",
+	
+});
+
+
+
+var win1 = Ti.UI.createWindow({
+	backgroundColor :("#E6F3F7"),
+	
+});
+	//circle.add(tempLabel);
+	tempView.add(tempLabel);
+	//tempView.add(square);
+	tempView.add(weatLabel);
+	tempView.add(cityLabel);
+	tempView.add(iconView);
+	
+	
+	tempView.add(dirLabel);
+	tempView.add(mphLabel);
+	tempView.add(gustLabel);
+	tempView.add(humLabel);
+	tempView.add(chillLabel);
+	
+	weatherView.add(tempView);
+	
+	win1.add(weatherView);
+	win1.open();	
+	
+	
+
+} else {
+	
+	var circle = Ti.UI.createImageView({
+	
+		image : '/images/circle.png',
+		height :250
+	});	
+	var square = Ti.UI.createImageView({
+		image : '/images/square.png',
+		height : 200,
+		width : 500,
+		bottom : 100
+	});
+	var iconView = Ti.UI.createImageView({
+		image : icon,
+		top : 200,
+		height : 100
+	});
+	var tempLabel = Ti.UI.createLabel({
+	text : temp,
+	font: {fontSize: 125, fontFamily: "Baskerville" },
+	left : 45
 });
 	var cityLabel = Ti.UI.createLabel({
 	text : city,
 	font: {fontSize: 35, fontFamily: "Baskerville"  },
 	top: 35
 });
-
 	var weatLabel = Ti.UI.createLabel({
 	text : " Currently " + weat  ,
-	font: {fontSize:  25, fontFamily: "Baskerville"},
-	top: 90
+	font: {fontSize:  50, fontFamily: "Baskerville"},
+	top: 110
 	
 });
 
 var humLabel = Ti.UI.createLabel({
 	text : hum +" Humidity",
-	font: {fontSize: 15, fontFamily: "Baskerville"  },
-	top : 25
+	font: {fontSize: 25, fontFamily: "Baskerville"  },
+	top : 20,
+	left : 20
 	
 });
-
 var chillLabel = Ti.UI.createLabel({
 	text : "Feels like " + chill + "\n",
-	font: {fontSize: 15, fontFamily: "Baskerville"  },
-	to : 100
+	font: {fontSize: 25, fontFamily: "Baskerville"  },
+	top : 70,
+	left : 20
 	
 });
-
 var dirLabel = Ti.UI.createLabel({
-	text : "winds out of " + dir,
-	font: {fontSize: 15, fontFamily: "Baskerville"  },
-	top : 35
+	text : "Winds out of " + dir,
+	font: {fontSize: 25, fontFamily: "Baskerville"  },
+	top : 120,
+	left : 20
 	
 });
-
 var mphLabel = Ti.UI.createLabel({
 	text : mph + " Mph",
-	font: {fontSize: 15, fontFamily: "Baskerville"  },
-	top: 70
+	font: {fontSize: 25, fontFamily: "Baskerville"  },
+	top: 20,
+	right : 20
 	
 });
-
 var gustLabel = Ti.UI.createLabel({
-	text : "gusting up to " + gust + " Mph",
-	font: {fontSize: 15, fontFamily: "Baskerville"  },
-	top : 105
+	text : "Gusting up to " + gust + " Mph",
+	font: {fontSize: 25, fontFamily: "Baskerville"  },
+	top : 70,
+	right: 20
 	
 });
 
@@ -88,33 +208,37 @@ var weatherView = Ti.UI.createView({
 });
 var tempView = Ti.UI.createView ({
 	backgroundColor : "#00B2EE",
-	height : (pageHeight / 5) * 3
+	
 });
 
-var windView = Ti.UI.createView({
-	backgroundColor: "#33A1C9",
-	height : pageHeight / 5
-});
-var chillView = Ti.UI.createView({
-	backgroundColor : "#38B0DE ",
-	height : pageHeight / 5
-});
+
 var win1 = Ti.UI.createWindow({
 	backgroundColor :("blue"),
 	
 });
-	chillView.add(humLabel,chillLabel);
-	tempView.add(cityLabel,weatLabel,tempLabel,iconView);
-	windView.add(dirLabel,mphLabel,gustLabel);
-	weatherView.add(tempView, chillView, windView);
+	circle.add(tempLabel);
+	tempView.add(circle);
+	tempView.add(square);
+	tempView.add(weatLabel);
+	tempView.add(cityLabel);
+	tempView.add(iconView);
+	
+	square.add(dirLabel);
+	square.add(mphLabel);
+	square.add(gustLabel);
+	square.add(humLabel);
+	square.add(chillLabel);
+	
+	weatherView.add(tempView);
 	
 	win1.add(weatherView);
-	win1.open();
+	win1.open();	
 	
-	
-	console.log(city, temp, weat,hum,chill,dir,mph,gust);
+};
 };
 
+
+	
 
 // error for xhr 
 var remoteError = function(e){

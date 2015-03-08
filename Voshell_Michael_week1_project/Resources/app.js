@@ -1,4 +1,4 @@
-Ti.UI.setBackgroundColor("blue");
+Ti.UI.setBackgroundColor("#E6F3F7");
 
 
 //var url = "http://api.wunderground.com/api/d0597510b3186fce/conditions/q/" + lat + ","  + lng + ".json" ;

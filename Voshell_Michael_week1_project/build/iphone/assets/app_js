@@ -1,0 +1,1 @@
+Ti.UI.setBackgroundColor("blue");var geo=require("geo"),weatherapi=require("weatherapi");Ti.Network.online&&geo.getGeo();

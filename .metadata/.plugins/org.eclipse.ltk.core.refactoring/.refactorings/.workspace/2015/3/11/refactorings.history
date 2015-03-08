@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Voshell_Michael_week1_project/Resources/android/fonts&apos;" deleteContents="false" description="Delete resource &apos;Voshell_Michael_week1_project/Resources/android/fonts&apos;" element1="/Voshell_Michael_week1_project/Resources/android/fonts" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1425777203670"/>
+</session>
