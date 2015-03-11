@@ -1,0 +1,7 @@
+"/Users/Mich/Desktop/AVF/Voshell_Michael_week1_project/build/android/gen/android/support/v7/appcompat/R.java"
+"/Users/Mich/Desktop/AVF/Voshell_Michael_week1_project/build/android/gen/com/voshell/week1/ApplicationStylesheet.java"
+"/Users/Mich/Desktop/AVF/Voshell_Michael_week1_project/build/android/gen/com/voshell/week1/R.java"
+"/Users/Mich/Desktop/AVF/Voshell_Michael_week1_project/build/android/gen/com/voshell/week1/Voshell_michael_week1_projectActivity.java"
+"/Users/Mich/Desktop/AVF/Voshell_Michael_week1_project/build/android/gen/com/voshell/week1/Voshell_michael_week1_projectAppInfo.java"
+"/Users/Mich/Desktop/AVF/Voshell_Michael_week1_project/build/android/gen/com/voshell/week1/Voshell_michael_week1_projectApplication.java"
+"/Users/Mich/Desktop/AVF/Voshell_Michael_week1_project/build/android/gen/ti/modules/titanium/ui/R.java"
