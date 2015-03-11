@@ -8017,3 +8017,21 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/Mich/.ec
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
 !SUBENTRY 1 org.eclipse.ui 2 0 2015-03-07 21:24:40.250
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+
+!ENTRY org.eclipse.core.resources 4 1 2015-03-10 22:00:25.971
+!MESSAGE Problems occurred while refreshing local changes
+!SUBENTRY 1 org.eclipse.core.resources 4 1 2015-03-10 22:00:25.971
+!MESSAGE Problems occurred while refreshing local changes
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Errors occurred while refreshing resources with the local file system.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:923)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:904)
+	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1699)
+	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:167)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Contains: The project description file (.project) for 'Weather' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 2 org.eclipse.core.resources 4 271 2015-03-10 22:00:25.973
+!MESSAGE Errors occurred while refreshing resources with the local file system.
+!SUBENTRY 3 org.eclipse.core.resources 4 567 2015-03-10 22:00:25.973
+!MESSAGE The project description file (.project) for 'Weather' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
