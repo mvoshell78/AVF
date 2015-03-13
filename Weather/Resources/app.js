@@ -3,7 +3,7 @@ Ti.UI.setBackgroundColor("#E6F3F7");
 
 var geo = require("geo");
 var ui = require("ui");
-var storage = require("storage");
+
 ui.runUi();
 var ifNet = function(){
 if (Ti.Network.online){
@@ -11,10 +11,11 @@ if (Ti.Network.online){
 	
 	geo.getGeo();
 } else {
-	alert("Network not available \n Please check your connection and try again");
+	alert("Network not available \n Forcast results may not be current");
 	//console.log("not online");
-	
-readData();
+var storage = require("storage");	
+storage.readData();
+storage.readData2();
 	
 };
 

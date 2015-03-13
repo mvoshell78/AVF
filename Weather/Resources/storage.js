@@ -47,7 +47,7 @@ var readData2 = function(){
 			icon1: dbResult.fieldByName("icon1"),
 			title2 : dbResult.fieldByName("title2"), 
 			conditions2 : dbResult.fieldByName("conditions2"), 
-			icon2: dbResult.fieldByName("icon"),
+			icon2: dbResult.fieldByName("icon2"),
 			title3 : dbResult.fieldByName("title3"), 
 			conditions3: dbResult.fieldByName("conditions3"), 
 			icon3: dbResult.fieldByName("icon3"),
@@ -64,7 +64,7 @@ var readData2 = function(){
 	console.log("rowCount " + rowCount);
 	dbResult.close();
 	db.close();
-	ui.changeTxt2(localData);
+	ui.changeTxt2(localData2);
 	
 };
 
@@ -92,7 +92,7 @@ var db = Ti.Database.open("weatherDB");
 
 db.execute("CREATE TABLE IF NOT EXISTS weatherTBL2 (id INTEGER PRIMARY KEY, title0 TEXT, conditions0 TEXT, icon0 TEXT, title1 TEXT, conditions1 TEXT, icon1 TEXT, title2 TEXT, conditions2 TEXT, icon2 TEXT, title3 TEXT, conditions3 TEXT, icon3 TEXT, title4 TEXT, conditions4 TEXT, icon4 TEXT)");
 db.execute("DELETE FROM weatherTBL2");
-db.execute("INSERT INTO weatherTBL2 (title0, conditions0, icon0, title1, conditions1, icon1, title2, conditions2, icon2, title3, conditions3, icon3, title4, conditions4, icon4) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",weather2.title0, weather2.conditions0, weather2.icon0, weather2.title1, weather2.conditions1, weather2.icon1, weather2.title2, weather2.conditions2, weather2.icon2, weather2.title3, weather2.conditions3, weather2.icon3, weather2.title4, weather2.conditions4, weather2.icon4);
+db.execute("INSERT INTO weatherTBL2(title0, conditions0, icon0, title1, conditions1, icon1, title2, conditions2, icon2, title3, conditions3, icon3, title4, conditions4, icon4) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",weather2.title0, weather2.conditions0, weather2.icon0, weather2.title1, weather2.conditions1, weather2.icon1, weather2.title2, weather2.conditions2, weather2.icon2, weather2.title3, weather2.conditions3, weather2.icon3, weather2.title4, weather2.conditions4, weather2.icon4);
 	var rowId = db.lastInsertRowId;
 		console.log(rowId);
 		db.close();
