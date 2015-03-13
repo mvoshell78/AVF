@@ -3,7 +3,7 @@ var pageHeight = Ti.Platform.displayCaps.platformHeight;
 var pageWidth = Ti.Platform.displayCaps.platformWidth;
 
 var createUrl = function(url,url2){
-	console.log("function1", url);
+	//console.log("function1", url);
 	xhr.open("GET", url);
 	xhr2.open("GET", url2);
 	xhr.send();	
@@ -18,6 +18,7 @@ exports.createUrl = createUrl;
 var remoteResponce = function(){
 	var json = JSON.parse(this.responseText);
 	var weather = {
+	 time : json.current_observation.observation_time,
 	 city : json.current_observation.display_location.city,
 	 temp : parseInt(json.current_observation.temp_f) +"° ",
 	 weat : json.current_observation.weather,
@@ -29,10 +30,10 @@ var remoteResponce = function(){
 	 icon : json.current_observation.icon_url};
 	
 	
-	console.log(weather);
+	console.log("watherapi", weather);
 	
-	var ui = require("ui");
-	ui.runUi(weather);
+var storage = require("storage");
+	storage.storeData(weather);
 };
 	
 var remoteResponce2 = function(){
@@ -55,10 +56,10 @@ var remoteResponce2 = function(){
 	conditions4 : json.forecast.txt_forecast.forecastday[4].fcttext,
 	icon4 : json.forecast.txt_forecast.forecastday[4].icon_url};
 	
-	console.log(weather2);
+	console.log("watherapi", weather2);
 	
-	/*var app = require("app");
-	app.runUi(weather2);*/
+	var storage = require("storage");
+	storage.storeData2(weather2);
 };	
 
 	
@@ -68,6 +69,7 @@ var remoteError = function(e){
 	Ti.API.debug(status = this.status);
 	Ti.API.debug(text = this.responceText);
 	Ti.API.debug(error= e.error);
+	alert ("HTTP Client Unavailable");
 };
 
 // xhr looks for api

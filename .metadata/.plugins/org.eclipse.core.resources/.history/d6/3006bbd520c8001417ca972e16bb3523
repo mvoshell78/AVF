@@ -1,0 +1,19 @@
+Ti.UI.setBackgroundColor("#E6F3F7");
+
+
+var geo = require("geo");
+//var ui = require(ui);
+var ifNet = function(){
+if (Ti.Network.online){
+	//console.log("online");
+	
+	geo.getGeo();
+} else {
+	alert("Network Failure \n Please check your connection and try again");
+	//console.log("not online");
+	//runUi();
+};
+
+};
+
+ifNet();

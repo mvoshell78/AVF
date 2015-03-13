@@ -1,0 +1,99 @@
+
+
+var readData = function(){
+	var db = Ti.database.open(weatherDB);
+	var dbResult = db.execute("SELECT * FROM weatherTBL");
+	while (dbResult.isValidRow()){
+		var localData = {
+			id: dbResult.fieldByName("id"),
+			time: dbResult.fieldByName("time"),
+			city: dbResult.fieldByName("city"), 
+			temp: dbResult.fieldByName("temp"),
+			weat: dbResult.fieldByName("weat"), 
+			hum: dbResult.fieldByName("hum"),
+			chill: dbResult.fieldByName("chill"), 
+			dir: dbResult.fieldByName("dir"), 
+			mph: dbResult.fieldByName("mph"), 
+			gust: dbResult.fieldByName("gust"), 
+			icon: dbResult.fieldByName("icon")
+			
+			
+		};
+		dbResult.next();
+		
+	}
+	var rowCount = bdResult.rowCount;
+	console.log("rowCount" + rowCount);
+	dbResult.close();
+	db.close();
+	
+};
+
+
+
+
+
+var storeData = function(weather){
+console.log("storeData ", weather);
+
+var db = Ti.Database.open("weatherDB");
+
+db.execute("CREATE TABLE IF NOT EXISTS weatherTBL (id INTEGER PRIMARY KEY, time TEXT, city TEXT, temp TEXT, weat TEXT, hum TEXT, chill TEXT, dir TEXT, mph TEXT, gust TEXT, icon TEXT)");
+db.execute("DELETE FROM weatherTBL");
+db.execute("INSERT INTO weatherTBL(time, city, temp, weat, hum ,chill, dir, mph, gust, icon) VALUES (?,?,?,?,?,?,?,?,?,?)",weather.time, weather.city, weather.temp, weather.weat, weather.hum ,weather.chill, weather.dir, weather.mph, weather.gust, weather.icon);
+	
+	var rowId = db.lastInsertRowId;
+console.log(rowId);
+db.close();
+
+readData();
+};
+
+
+
+//, title0 TEXT, conditions0 TEXT, icon0 TEXT,title1 TEXT, conditions1 TEXT, icon1 TEXT,title2 TEXT, conditions2 TEXT, icon2 TEXT,title3 TEXT, conditions3 TEXT, icon3 TEXT,title4 TEXT, conditions4 TEXT, icon4 TEXT)");
+//, title0, conditions0, icon0, title1, conditions1, icon1, title2, conditions2, icon2, title3, conditions3, icon3, title4, conditions4, icon4 *//*,?,?,?,?,?,?,?,?,?,?,?,?*/)
+//, weather2.title0, weather2.conditions0, weather2.icon0, weather2.title1, weather2.conditions1, weather2.icon1, weather2.title2, weather2.conditions2, weather2.icon2, weather2.title3, weather2.conditions3, weather2.icon3, weather2.title4, weather2.conditions4, weather2.icon4);
+
+exports.storeData = storeData;
+
+
+
+
+
+
+/*
+var weather = {
+	 time : json.current_observation.observation_time,
+	 city : json.current_observation.display_location.city,
+	 temp : parseInt(json.current_observation.temp_f) +"° ",
+	 weat : json.current_observation.weather,
+	 hum : json.current_observation.relative_humidity,
+	 chill : json.current_observation.windchill_f + "° ",
+	 dir : json.current_observation.wind_dir,
+	 mph : json.current_observation.wind_mph,
+	 gust : json.current_observation.wind_gust_mph,
+	 icon : json.current_observation.icon_url
+	 };
+	 
+var weather2 = {
+	 
+	title0 : json.forecast.txt_forecast.forecastday[0].title,
+	conditions0 : json.forecast.txt_forecast.forecastday[0].fcttext,
+	icon0 : json.forecast.txt_forecast.forecastday[0].icon_url,
+	title1 : json.forecast.txt_forecast.forecastday[1].title,
+	conditions1 : json.forecast.txt_forecast.forecastday[1].fcttext,
+	icon1 : json.forecast.txt_forecast.forecastday[1].icon_url,
+	title2 : json.forecast.txt_forecast.forecastday[2].title,
+	conditions2 : json.forecast.txt_forecast.forecastday[2].fcttext,
+	icon2 : json.forecast.txt_forecast.forecastday[2].icon_url,
+	title3 : json.forecast.txt_forecast.forecastday[3].title,
+	conditions3 : json.forecast.txt_forecast.forecastday[3].fcttext,
+	icon3 : json.forecast.txt_forecast.forecastday[3].icon_url,
+	title4 : json.forecast.txt_forecast.forecastday[4].title,
+	conditions4 : json.forecast.txt_forecast.forecastday[4].fcttext,
+	icon4 : json.forecast.txt_forecast.forecastday[4].icon_url
+	};
+
+
+*/
