@@ -23,7 +23,7 @@ var readData = function(){
 		dbResult.next();
 		
 	}
-	
+	console.log(localData);
 	console.log("rowCount " + rowCount);
 	dbResult.close();
 	db.close();
