@@ -109,38 +109,4 @@ exports.readData = readData;
 
 
 
-/*
-var weather = {
-	 time : json.current_observation.observation_time,
-	 city : json.current_observation.display_location.city,
-	 temp : parseInt(json.current_observation.temp_f) +"° ",
-	 weat : json.current_observation.weather,
-	 hum : json.current_observation.relative_humidity,
-	 chill : json.current_observation.windchill_f + "° ",
-	 dir : json.current_observation.wind_dir,
-	 mph : json.current_observation.wind_mph,
-	 gust : json.current_observation.wind_gust_mph,
-	 icon : json.current_observation.icon_url
-	 };
-	 
-var weather2 = {
-	 
-	title0 : json.forecast.txt_forecast.forecastday[0].title,
-	conditions0 : json.forecast.txt_forecast.forecastday[0].fcttext,
-	icon0 : json.forecast.txt_forecast.forecastday[0].icon_url,
-	title1 : json.forecast.txt_forecast.forecastday[1].title,
-	conditions1 : json.forecast.txt_forecast.forecastday[1].fcttext,
-	icon1 : json.forecast.txt_forecast.forecastday[1].icon_url,
-	title2 : json.forecast.txt_forecast.forecastday[2].title,
-	conditions2 : json.forecast.txt_forecast.forecastday[2].fcttext,
-	icon2 : json.forecast.txt_forecast.forecastday[2].icon_url,
-	title3 : json.forecast.txt_forecast.forecastday[3].title,
-	conditions3 : json.forecast.txt_forecast.forecastday[3].fcttext,
-	icon3 : json.forecast.txt_forecast.forecastday[3].icon_url,
-	title4 : json.forecast.txt_forecast.forecastday[4].title,
-	conditions4 : json.forecast.txt_forecast.forecastday[4].fcttext,
-	icon4 : json.forecast.txt_forecast.forecastday[4].icon_url
-	};
 
-
-*/
