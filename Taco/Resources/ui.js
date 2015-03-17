@@ -1,5 +1,5 @@
 
-
+var storage = require("storage");
 
 var runUi = function(){
 
@@ -10,12 +10,28 @@ var win1 = Ti.UI.createWindow({
 
 var api = require("api");
 
+var makeWin = function(){
+	var labels = [];
+	for (i = 0; i<7; i++){
+		labels[i]  = Ti.UI.createLabel({
+			name : labels[i],
+			text : "test " + i, 
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+		console.log(labels[i]);
+		win1.add(labels[i]);
+	};
+};
+makeWin();
 win1.open();	
 
 };
 
-var changeTxt = function(recipie){
-	console.log("changeTxt " + recipie.baseName );
+var changeTxt = function(recipe){
+	//labels0.text = recipe.baseName;
+	console.log("changeTxt " + recipe.baseName);
 };
 
 exports.runUi = runUi;

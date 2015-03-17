@@ -8,26 +8,26 @@ var getJson = function(){
 
 var remoteResponce = function(){
 	var json = JSON.parse(this.responseText);
-	var recipie = {
+	var recipe = {
 	 shellName : json.shell.name,
 	 shellRecipe : json.shell.recipe,
 	 mixinName : json.mixin.name,
-	 mixinRecipe : json.mixin.recipie,
+	 mixinRecipe : json.mixin.recipe,
 	 mixinUrl : json.mixin.url,
 	 seasoningName : json.seasoning.name,
-	 seasoningRecipie : json.seasoning.recipie,
+	 seasoningRecipe : json.seasoning.recipe,
 	 seasoningUrl : json.seasoning.url,
 	 condimentName : json.condiment.name,
-	 condimentRecipie : json.condiment.recipie,
+	 condimentRecipe : json.condiment.recipe,
 	 condimentUrl : json.condiment.url,
 	 baseName : json.base_layer.name,
-	 baseRecipie : json.base_layer.recipie,
+	 baseRecipe : json.base_layer.recipe,
 	 baseUrl : json.base_layer.url
 	 };
 	
-	console.log(recipie);
- 	var ui = require("ui");
- 	ui.changeTxt(recipie);
+	console.log(recipe);
+ var storage = require("storage");
+	storage.storeData(recipe);
 	
 
 };

@@ -1,0 +1,48 @@
+var readData = function(){
+	var db = Ti.Database.open("weatherDB");
+	var dbResult = db.execute("SELECT * FROM weatherTBL");
+	var rowCount = dbResult.rowCount;
+	while (dbResult.isValidRow()){
+		var localData = {
+			id: dbResult.fieldByName("id"),
+			time: dbResult.fieldByName("time"),
+			city: dbResult.fieldByName("city"), 
+			temp: dbResult.fieldByName("temp"),
+			weat: dbResult.fieldByName("weat"), 
+			hum: dbResult.fieldByName("hum"),
+			chill: dbResult.fieldByName("chill"), 
+			dir: dbResult.fieldByName("dir"), 
+			mph: dbResult.fieldByName("mph"), 
+			gust: dbResult.fieldByName("gust"), 
+			icon: dbResult.fieldByName("icon")
+			
+			
+		};
+		dbResult.next();
+		
+	}
+	console.log(localData);
+	console.log("rowCount " + rowCount);
+	dbResult.close();
+	db.close();
+	ui.changeTxt(localData);
+	
+};
+
+
+
+var storeData = function(recipie){
+console.log("storeData ", recipie);
+
+var db = Ti.Database.open("rcipieDB");
+
+db.execute("CREATE TABLE IF NOT EXISTS recipieTBL (id INTEGER PRIMARY KEY, time TEXT, city TEXT, temp TEXT, weat TEXT, hum TEXT, chill TEXT, dir TEXT, mph TEXT, gust TEXT, icon TEXT)");
+db.execute("DELETE FROM weatherTBL");
+db.execute("INSERT INTO weatherTBL(time, city, temp, weat, hum ,chill, dir, mph, gust, icon) VALUES (?,?,?,?,?,?,?,?,?,?)",weather.time, weather.city, weather.temp, weather.weat, weather.hum ,weather.chill, weather.dir, weather.mph, weather.gust, weather.icon);
+	
+	var rowId = db.lastInsertRowId;
+		console.log(rowId);
+		db.close();
+
+readData();
+};
