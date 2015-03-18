@@ -25,9 +25,13 @@ var remoteResponce = function(){
 	 baseUrl : json.base_layer.url
 	 };
 	
-	console.log(recipe);
- var storage = require("storage");
-	storage.storeData(recipe);
+	
+ 	var storage = require("storage");
+		storage.storeData(recipe);
+	
+	var cloud = require("cloud");
+		cloud.saveCloud(recipe);
+
 	
 
 };

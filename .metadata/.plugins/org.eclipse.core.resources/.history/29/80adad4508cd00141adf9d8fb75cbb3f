@@ -1,0 +1,177 @@
+
+var storage = require("storage");
+
+
+
+var runUi = function(){
+var changeTxt = function(recipe){
+	baseNameL.text = recipe.baseName;
+	baseRecL.text = recipe.baseRecipe;
+	
+	console.log("changeTxt " + recipe.baseName);
+};
+var win1 = Ti.UI.createWindow({
+	backgroundColor : ("#A31E39"),
+	layout : "vertical"	
+});
+
+var api = require("api");
+//1:06
+/*var makeWin = function(){
+	var labels = [];
+	for (i = 0; i<7; i++){
+		labels[i]  = Ti.UI.createLabel({
+			name : labels[i],
+			text : "test " + i, 
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+		console.log(labels[i]);
+		win1.add(labels[i]);
+	};
+};
+makeWin();*/
+	var baseNameL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var baseRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var baseUrlL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var conNameL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var conRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var conUrlL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var mixNameL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var mixRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var mixUrlL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var seaUrlL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var seaNameL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var seaRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var sheNameL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var sheRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+
+var showCamera = Ti.UI.createButton({
+	title : "Show Camera",
+	height: 30,
+	width : 100, 
+	color : "green" 
+});
+
+
+showCamera.addEventListener('click', function(e){
+	console.log("click" + e);
+	Ti.Media.showCamera({
+		saveToPhotoGallery: true,
+		mediaTypes: [Ti.Media.MEDIA_TYPE_PHOTO],
+		success: function(event) {
+			if(event.mediaType === Ti.Media.MEDIA_TYPE_PHOTO) {
+				alert ("Image saved to camera roll");
+			} else {
+				alert("error" + event.mediaType);
+			}
+		},
+		error: function(error) {
+			if (error.code === Ti.Media.NO_CAMERA) {
+				alert("No Camera Detected");
+			} else {
+				alert("other error: " + error.code);
+			}
+		}
+	}); //closing showCamera
+});
+
+
+win1.add(showCamera);
+
+win1.add(baseNameL);
+win1.add(baseRecL);
+win1.add(baseUrlL);
+win1.add(conNameL);
+win1.add(conRecL);
+win1.add(conUrlL);
+win1.add(mixNameL);
+win1.add(mixRecL);
+win1.add(mixUrlL);
+win1.add(seaNameL);
+win1.add(seaRecL);
+win1.add(seaUrlL);
+win1.add(sheNameL);
+win1.add(sheRecL);
+
+win1.open();	
+
+
+
+exports.changeTxt = changeTxt;
+
+};
+
+	
+exports.runUi = runUi;

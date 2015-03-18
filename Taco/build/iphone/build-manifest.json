@@ -5,7 +5,7 @@
 	"deviceFamily": "universal",
 	"iosSdkPath": "/Users/Mich/Library/Application Support/Titanium/mobilesdk/osx/3.5.0.GA/iphone",
 	"tiCoreHash": "47658db9e85e6b4af144b3d6070d6de0",
-	"modulesHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"modulesHash": "7fb655db1d51a26b74a2778ab4a02a6b",
 	"modulesNativeHash": "d41d8cd98f00b204e9800998ecf8427e",
 	"gitHash": "0014f83",
 	"name": "Taco",
