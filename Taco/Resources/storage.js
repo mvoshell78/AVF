@@ -28,7 +28,7 @@ var readData = function(){
 	console.log("rowCount " + rowCount);
 	dbResult.close();
 	db.close();
-	ui.changeTxt(localData);
+	ui.runUi(localData);
 	
 };
 

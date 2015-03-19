@@ -32,7 +32,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1426734471662</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -135,6 +135,27 @@
 			<key>UILaunchImageMinimumOSVersion</key>
 			<string>7.0</string>
 		</dict>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>/font/Roboto-Black.ttf</string>
+		<string>/font/Roboto-BlackItalic.ttf</string>
+		<string>/font/Roboto-Bold.ttf</string>
+		<string>/font/Roboto-BoldItalic.ttf</string>
+		<string>/font/Roboto-Italic.ttf</string>
+		<string>/font/Roboto-Light.ttf</string>
+		<string>/font/Roboto-LightItalic.ttf</string>
+		<string>/font/Roboto-Medium.ttf</string>
+		<string>/font/Roboto-MediumItalic.ttf</string>
+		<string>/font/Roboto-Regular.ttf</string>
+		<string>/font/Roboto-Thin.ttf</string>
+		<string>/font/Roboto-ThinItalic.ttf</string>
+		<string>/font/RobotoCondensed-Bold.ttf</string>
+		<string>/font/RobotoCondensed-BoldItalic.ttf</string>
+		<string>/font/RobotoCondensed-Italic.ttf</string>
+		<string>/font/RobotoCondensed-Light.ttf</string>
+		<string>/font/RobotoCondensed-LightItalic.ttf</string>
+		<string>/font/RobotoCondensed-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

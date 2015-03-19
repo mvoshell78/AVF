@@ -1,10 +1,10 @@
-Ti.UI.setBackgroundColor("#E6F3F7");
+Ti.UI.setBackgroundImage("#E6F3F7");
 
 
 
 
 var ui = require("ui");
-ui.runUi();
+//ui.runUi();
 
 
 var ifNet = function(){

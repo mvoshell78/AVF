@@ -1,0 +1,288 @@
+
+var storage = require("storage");
+
+
+
+var runUi = function(){
+var changeTxt = function(recipe){
+	baseNameL.text = recipe.baseName;
+	baseRecL.text = recipe.baseRecipe;
+	conNameL.text = recipe.condimentName;
+	conRecL.text = recipe.condimentRecipe;
+	mixNameL.text = recipe.mixinName;
+	mixRecL.text = recipe.mixinRecipe;
+	seaNameL.text = recipe.seasoningName;
+	seaRecL.text = recipe.seasoningRecipe;
+	sheNameL.text = recipe.shellName;
+	sheRecL.text = recipe.shellRecipe;
+	
+	console.log("changeTxt " + recipe.baseName);
+};
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: win1
+});
+var win1 = Ti.UI.createWindow({
+	backgroundImage : "/images/background.jpg",
+	layout : "vertical"	
+});
+
+var win2 = Ti.UI.createWindow({
+	backgroundImage : "/images/background.jpg",
+	layout : "vertical"	
+});
+
+var api = require("api");
+
+	var baseNameV = Ti.UI.createView({
+		top : 40,
+		name : "baseName",
+		height : "15%",
+		width : "80%",
+		borderWidth : 1	
+		
+	});
+		var conNameV = Ti.UI.createView({
+		top : 5,
+		name: "conName",
+		height : "15%",
+		width : "80%",
+		borderWidth : 1		
+	});
+		var mixNameV = Ti.UI.createView({
+		top : 5,
+		height : "15%",
+		width : "80%",
+		borderWidth : 1
+		
+	});
+		var seaNameV = Ti.UI.createView({
+		top : 5,
+		name : "seaName",
+		height : "15%",
+		width : "80%",
+		borderWidth : 1
+		
+	});
+		var sheNameV = Ti.UI.createView({
+		top : 5,
+		name : "sheName",
+		height : "15%",
+		width : "80%",
+		borderWidth : 1
+		
+	});
+	
+	var baseNameL  = Ti.UI.createLabel({
+			text : "",
+			name : "baseName",
+			font: {fontSize: 20, fontFamily: "Roboto", fontWeight : "bold"  },
+			top : 20,
+			color : "black"
+		});
+	var baseRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var baseUrlL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var conNameL  = Ti.UI.createLabel({
+			text : "",
+			name : "conName",
+			font: {fontSize: 20, fontFamily: "Roboto", fontWeight : "bold"  },
+			top : 20,
+			color : "black"
+		});
+	var conRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var conUrlL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var mixNameL  = Ti.UI.createLabel({
+			text : "",
+			name : "mixName",
+			font: {fontSize: 20, fontFamily: "Roboto", fontWeight : "bold"  },
+			top : 20,
+			color : "black"
+		});
+	var mixRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var mixUrlL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var seaUrlL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var seaNameL  = Ti.UI.createLabel({
+			text : "",
+			name : "seaName",
+			font: {fontSize: 20, fontFamily: "Roboto", fontWeight : "bold"  },
+			top : 20,
+			color : "black"
+		});
+	var seaRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+	var sheNameL  = Ti.UI.createLabel({
+			text : "",
+			name : "sheName",
+			font: {fontSize: 20, fontFamily: "Roboto", fontWeight : "bold"  },
+			top : 20,
+			color : "black"
+		});
+	var sheRecL  = Ti.UI.createLabel({
+			text : "",
+			font: {fontSize: 20, fontFamily: "Roboto-Thin"  },
+			top : 20,
+			color : "black"
+		});
+
+var showCamera = Ti.UI.createButton({
+	title : "Show Camera",
+	name : "camera",
+	height: 30,
+	width : 100, 
+	color : "green" 
+});
+
+
+win1.addEventListener('click', function(e){
+	console.log("click" + e.source.name);
+	
+	if (e.source.name === "baseName") {
+		console.log( "base Name");
+		
+		
+		win1.close();
+		
+		win2.add(baseNameL);
+		win2.add(baseRecL);
+		
+		win2.open();
+	};
+	if (e.source.name === "conName") {
+		console.log( "con Name");
+		
+		win1.close();
+		
+		win2.add(conNameL);
+		win2.add(conRecL);
+		
+		win2.open();
+	};
+	if (e.source.name === "mixName") {
+		console.log( "mix Name");
+		win1.close();
+		
+		win2.add(mixNameL);
+		win2.add(mixRecL);
+		
+		win2.open();
+	};
+	if (e.source.name === "seaName") {
+		console.log( "sea Name");
+		win1.close();
+		
+		win2.add(seaNameL);
+		win2.add(seaRecL);
+		
+		win2.open();
+	};
+	if (e.source.name === "sheName") {
+		console.log( "she Name");
+		win1.close();
+		
+		win2.add(sheNameL);
+		win2.add(sheRecL);
+		
+		win2.open();
+	};
+	if (e.source.name === "camera") {
+		console.log( "camera");
+	
+	var api = require("api");
+	api.getJson();
+	Ti.Media.showCamera({
+		saveToPhotoGallery: true,
+		mediaTypes: [Ti.Media.MEDIA_TYPE_PHOTO],
+		success: function(event) {
+			if(event.mediaType === Ti.Media.MEDIA_TYPE_PHOTO) {
+				alert ("Image saved to camera roll");
+			} else {
+				alert("error" + event.mediaType);
+			}
+		},
+		error: function(error) {
+			if (error.code === Ti.Media.NO_CAMERA) {
+				alert("No Camera Detected");
+			} else {
+				alert("other error: " + error.code);
+			}
+		}
+	}); //closing showCamera
+	}; /*else {
+		console.log("anywhere else");
+		//changeTxt(recipe);*/
+	
+});
+
+
+
+win1.add(baseNameV);
+win1.add(conNameV);
+win1.add(mixNameV);
+win1.add(seaNameV);
+win1.add(sheNameV);
+baseNameV.add(baseNameL);
+	//recScroll.add(baseRecL);
+	//recScroll.add(baseUrlL);
+conNameV.add(conNameL);
+	//recScroll.add(conRecL);
+	//recScroll.add(conUrlL);
+mixNameV.add(mixNameL);
+	//recScroll.add(mixRecL);
+	//recScroll.add(mixUrlL);
+seaNameV.add(seaNameL);
+	//recScroll.add(seaRecL);
+	//recScroll.add(seaUrlL);
+sheNameV.add(sheNameL);
+	//recScroll.add(sheRecL);
+
+win1.add(showCamera);
+win1.open();
+
+
+
+
+exports.changeTxt = changeTxt;
+
+};
+
+	
+exports.runUi = runUi;
