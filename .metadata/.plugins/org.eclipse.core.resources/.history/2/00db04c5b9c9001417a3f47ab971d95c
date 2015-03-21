@@ -1,5 +1,0 @@
-var storeData = function(weather, weather2){
-console.log(weather,weather2);
-};
-
-exports.storeData = storeData;

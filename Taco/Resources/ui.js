@@ -18,20 +18,41 @@ var runUi = function(recipe){
 	
 	console.log("changeTxt " + recipe.baseName);
 };*/
-
+if (Ti.Platform.osname === "android") {
 var win1 = Ti.UI.createWindow({
+	backgroundColor: "#F8F5E1",
+	//backgroundImage : "/images/background.jpg",
+	layout : "vertical"	
+});
+var win2 = Ti.UI.createWindow({
+	backgroundColor : "#F8F5E1",
+	//backgroundImage : "/images/background.jpg",
+	layout : "vertical"
+});
+var recScroll = Ti.UI.createScrollView({
+	 height: '90%',
+ 	 width: '90%',
+ 	 borderRadius : 10,
+ 	 top : 40,
+ 	 layout : "vertical",
+	 showVerticalScrollIndicator: true,
+	 contentWidth: 'auto',
+  	 contentHeight: 'auto',
+  	 scrollType: "vertical"
+});
+} else {
+var win1 = Ti.UI.createWindow({
+	//backgroundColor: "#F8F5E1",
 	backgroundImage : "/images/background.jpg",
 	layout : "vertical"	
 });
 var win2 = Ti.UI.createWindow({
+	//backgroundColor : "#F8F5E1",
 	backgroundImage : "/images/background.jpg",
 	layout : "vertical"
-});
-
-var api = require("api");
-
-	var recScroll = Ti.UI.createScrollView({
-	 height: '80%',
+});	
+var recScroll = Ti.UI.createScrollView({
+	 height: '90%',
  	 width: '50%',
  	 borderRadius : 10,
  	 top : 40,
@@ -41,39 +62,48 @@ var api = require("api");
   	 contentHeight: 'auto',
   	 scrollType: "vertical"
 });
+};
+var api = require("api");
+
+	
 	var baseNameV = Ti.UI.createView({
-		top : 5,
+		top : 3,
 		name : "baseName",
-		height : "15%",
-		width : "80%"
+		height : "17%",
+		width : "80%",
+		layout: "vertical"
 		
 	});
 	var conNameV = Ti.UI.createView({
-		top : 5,
+		top : 3,
 		name: "conName",
-		height : "15%",
-		width : "80%"	
+		height : "17%",
+		width : "80%",
+		layout: "vertical"	
 	});
 	var mixNameV = Ti.UI.createView({
-		top : 5,
+		top : 3,
 		name : "mixName",
-		height : "15%",
-		width : "80%"
+		height : "17%",
+		width : "80%",
+		layout: "vertical"
 		
 	});
 	var seaNameV = Ti.UI.createView({
-		top : 5,
+		top : 3,
 		name : "seaName",
-		height : "15%",
-		width : "80%"
+		height : "17%",
+		width : "80%",
+		layout: "vertical"
 		
 		
 	});
 	var sheNameV = Ti.UI.createView({
-		top : 5,
+		top : 3,
 		name : "sheName",
-		height : "15%",
-		width : "80%"
+		height : "18%",
+		width : "80%",
+		layout: "vertical"
 		
 		
 	});
@@ -94,77 +124,129 @@ var api = require("api");
 	var baseNameL  = Ti.UI.createLabel({
 			text : recipe.baseName,
 			name : "baseName",
-			font: {fontSize: 20, fontFamily: "Roboto-thin"},
-			top : 20,
+			font: {fontSize: 25, fontFamily: "Roboto-thin"},
+			top : 15,
 			color : "black"
 		});
+	var base = Ti.UI.createLabel({
+			text : "Filling : ",
+			name : "baseName",
+			font: {fontSize: 30, fontFamily: "Roboto-thin"},
+			top : 20,
+			color : "black"
+	});
 	var conNameL  = Ti.UI.createLabel({
 			text : recipe.condimentName,
 			name : "conName",
-			font: {fontSize: 20, fontFamily: "Roboto-thin"  },
+			font: {fontSize: 25, fontFamily: "Roboto-thin"  },
 			top : 20,
 			color : "black"
 		});	
+	var con = Ti.UI.createLabel({
+			text : "Condiment : ",
+			name : "conName",
+			font: {fontSize: 30, fontFamily: "Roboto-thin"},
+			top : 20,
+			color : "black"
+	});
 	var mixNameL  = Ti.UI.createLabel({
 			text : recipe.mixinName,
 			name : "mixName",
-			font: {fontSize: 20, fontFamily: "Roboto-thin"  },
+			font: {fontSize: 25, fontFamily: "Roboto-thin"  },
 			top : 20,
 			color : "black"
 		});
+	var top = Ti.UI.createLabel({
+			text : "Toppings : ",
+			name : "mixName",
+			font: {fontSize: 30, fontFamily: "Roboto-thin"},
+			top : 20,
+			color : "black"
+	});
 	var seaNameL  = Ti.UI.createLabel({
 			text : recipe.seasoningName,
 			name : "seaName",
-			font: {fontSize: 20, fontFamily: "Roboto-thin"  },
+			font: {fontSize: 25, fontFamily: "Roboto-thin"  },
 			top : 20,
 			color : "black"
 		});
+	var sea = Ti.UI.createLabel({
+			text : "Seasoning : ",
+			name : "seaName",
+			font: {fontSize: 30, fontFamily: "Roboto-thin"},
+			top : 20,
+			color : "black"
+	});
 	var sheNameL  = Ti.UI.createLabel({
 			text : recipe.shellName,
 			name : "sheName",
-			font: {fontSize: 20, fontFamily: "Roboto-thin", fontWeight : "bold"  },
+			font: {fontSize: 25, fontFamily: "Roboto-thin"},
 			top : 20,
 			color : "black"
 		});
+	var shell = Ti.UI.createLabel({
+			text : "Shell Type : ",
+			name : "sheName",
+			font: {fontSize: 30, fontFamily: "Roboto-thin"},
+			top : 20,
+			color : "black"
+	});
+if (Ti.Network.online){
 	var getNewView = Ti.UI.createView ({
-		height : "5%",
-		top: 40,
-		width : "50%",
+		height : "7%",
+		width : "100%",
 		name: "getNew",
-		backgroundColor : ("#BFCFCC"),
+		backgroundColor : ("#B22222"),
 	});
 	var getNew = Ti.UI.createLabel({
-	text : "Get new recipe",
+	text : "Get new random taco recipe",
 	font: {fontSize: 20, fontFamily: "Roboto" },
 	name : "getNew",
-	color : "black" 
+	color : "white" 
 });
+	
+} else {
+var getNewView = Ti.UI.createView ({
+		height : "7%",
+		width : "100%",
+		name: "getNew",
+		opacity : .9,
+		backgroundColor : ("#B22222"),
+	});
+	var getNew = Ti.UI.createLabel({
+	text : "New recipe not available",
+	font: {fontSize: 20, fontFamily: "Roboto" },
+	name : "getNew",
+	color : ("#A8A8A8" )
+});
+
+	
+};	
+	
 
 	var showCamera = Ti.UI.createLabel({
 	text : "Take a pic",
 	font: {fontSize: 20, fontFamily: "Roboto"},
 	name : "camera",
-	color : "black" 
+	color : "white" 
 });
 	var showCameraView = Ti.UI.createView ({
-		height : "5%",
-		top: 5,
-		width:  "50%",
+		height : "7%",
+		width:  "100%",
 		name : "camera",
-		backgroundColor : ("#BFCFCC"),
+		backgroundColor : ("#B22222 "),
 	});
 	var back = Ti.UI.createLabel({
 	text : "Return to Recipes",
 	font: {fontSize: 20, fontFamily: "Roboto"   },
-	color : "black"
+	color : "white"
 	
 	 
 });
 	var backV = Ti.UI.createView({
-	backgroundColor : ("#BFCFCC"),
-	height : "5%",
-	width : "50%",
-	bottom : 0
+	backgroundColor : ("#B22222 "),
+	height : "7%",
+	width : "100%"
 });
 	
 backV.add(back);
@@ -180,13 +262,23 @@ win1.add(sheNameV);
 
 recScroll.add(nameLabel);
 recScroll.add(recLabel);
+
 win2.add(recScroll);
 win2.add(backV);
 
+baseNameV.add(base);
 baseNameV.add(baseNameL);
+
+conNameV.add(con);
 conNameV.add(conNameL);
+
+mixNameV.add(top);	
 mixNameV.add(mixNameL);	
+
+seaNameV.add(sea);
 seaNameV.add(seaNameL);
+
+sheNameV.add(shell);
 sheNameV.add(sheNameL);
 
 showCameraView.add(showCamera);	
@@ -211,7 +303,7 @@ win1.addEventListener('click', function(e){
 		win1.close();
 	
 		nameLabel.text = recipe.baseName;
-		recLabel.text = recipe.condimentRecipe;
+		recLabel.text = recipe.baseRecipe;
 		
 		
 		win2.open();

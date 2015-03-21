@@ -33,6 +33,8 @@ public final class TacoApplication extends TiApplication
 		postAppInfo();
 
 
+	    KrollAssetHelper.setAssetCrypt(new AssetCryptImpl());
+
 
 		V8Runtime runtime = new V8Runtime();
 
@@ -43,42 +45,6 @@ public final class TacoApplication extends TiApplication
 		stylesheet = new ApplicationStylesheet();
 		postOnCreate();
 
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
 
 	
 
