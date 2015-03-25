@@ -1,7 +1,7 @@
 =run
-LAST_LAUNCH_TIMESTAMP=1426966430401
+LAST_LAUNCH_TIMESTAMP=1427245433106
 Taco\:launchMode=run
-Taco\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.A69BDEC3-3403-4C86-94C8-12D7BB7128D0
+Taco\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.run.device.launchShortcut.itunes
 Voshell_Michael_week1_project\:launchMode=run
 Voshell_Michael_week1_project\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.simulator.launchShortcut.GalaxyNexus
 Weather\:launchMode=run

@@ -1,0 +1,1 @@
+Ti.UI.setBackgroundImage("#E6F3F7");var ui=require("ui"),ifNet=function(){if(Ti.Network.online){console.log("online");var e=require("cloud");e.loginCloud()}else{alert("Network not available \n Loading last displayed recipie"),console.log("not online");var r=require("storage");r.readData()}};ifNet();
