@@ -1,12 +1,16 @@
 
+
+
+var runUi2 = function(recipe,i){
+
 var win3 = Ti.UI.createWindow({
-	//backgroundColor : "#F8F5E1",
-	backgroundImage : "/images/background.jpg",
+	backgroundColor : "#F8F5E1",
+	//backgroundImage : "/images/background.jpg",
 	layout : "vertical"
 });	
 var win4 = Ti.UI.createWindow({
-	//backgroundColor : "#F8F5E1",
-	backgroundImage : "/images/background.jpg",
+	backgroundColor : "#F8F5E1",
+	//backgroundImage : "/images/background.jpg",
 	layout : "vertical"
 });	
 
@@ -62,7 +66,7 @@ var sheNameV = Ti.UI.createView({
 	
 	
 });	
-var nameLabel  = Ti.UI.createLabel({
+var nameLabel2  = Ti.UI.createLabel({
 	text : "recipe[i].baseRecipe,",
 	font: {fontSize: 20, fontFamily: "Roboto",fontWeight : "bold"  },
 	top : 20,
@@ -76,8 +80,8 @@ var baseNameL  = Ti.UI.createLabel({
 	color : "black"
 });
 
-var recLabel  = Ti.UI.createLabel({
-	text : "recipe[i].baseRecipe",
+var recLabel2  = Ti.UI.createLabel({
+	text : "",
 	font: {fontSize: 20, fontFamily: "Roboto"  },
 	top : 20,
 	color : "black"
@@ -87,10 +91,10 @@ var base = Ti.UI.createLabel({
 	name : "baseName",
 	font: {fontSize: 27, fontFamily: "Roboto",fontWeight : "bold"  },
 	top : 20,
-	color : "black"
+	color : "#A32929"
 });
 var conNameL  = Ti.UI.createLabel({
-	text : "recipe[i].condimentName",
+	text : "",
 	name : "conName",
 	font: {fontSize: 23, fontFamily: "Roboto"  },
 	top : 20,
@@ -101,10 +105,10 @@ var con = Ti.UI.createLabel({
 	name : "conName",
 	font: {fontSize: 27, fontFamily: "Roboto",fontWeight : "bold"  },
 	top : 20,
-	color : "black"
+	color : "#A32929"
 });
 var mixNameL  = Ti.UI.createLabel({
-	text : "recipe[i].mixinName",
+	text : "",
 	name : "mixName",
 	font: {fontSize: 23, fontFamily: "Roboto"  },
 	top : 20,
@@ -115,10 +119,10 @@ var top = Ti.UI.createLabel({
 	name : "mixName",
 	font: {fontSize: 27, fontFamily: "Roboto",fontWeight : "bold"  },
 	top : 20,
-	color : "black"
+	color : "#A32929"
 });
 var seaNameL  = Ti.UI.createLabel({
-	text : "recipe[i].seasoningName",
+	text : "",
 	name : "seaName",
 	font: {fontSize: 23, fontFamily: "Roboto"  },
 	top : 20,
@@ -129,10 +133,10 @@ var sea = Ti.UI.createLabel({
 	name : "seaName",
 	font: {fontSize: 27, fontFamily: "Roboto",fontWeight : "bold"  },
 	top : 20,
-	color : "black"
+	color : "#A32929"
 });
 var sheNameL  = Ti.UI.createLabel({
-	text : "recipe[i].shellName",
+	text : "",
 	name : "sheName",
 	font: {fontSize: 23, fontFamily: "Roboto"  },
 	top : 20,
@@ -143,7 +147,7 @@ var shell = Ti.UI.createLabel({
 	name : "sheName",
 	font: {fontSize: 27, fontFamily: "Roboto",fontWeight : "bold"  },
 	top : 20,
-	color : "black"
+	color : "#A32929"
 });
 
 var backV = Ti.UI.createView({
@@ -159,22 +163,22 @@ var back = Ti.UI.createLabel({
 var favorite = Ti.UI.createLabel({
 	text : " Favorites ",
 	top : 15,
-	font: {fontSize: 30, fontFamily: "Roboto"   },
+	font: {fontSize: 40, fontFamily: "Roboto"   },
 	color : "black"
 });
 var retRec = Ti.UI.createButton({
 	title : "Return to Recipes",
 	font: {fontSize: 30, fontFamily: "Roboto"   },
-	color : "black",
+	color : "#A32929",
 	width: "50%",
 	height : "7%",
 	name : "retRec"
 });
 
 var next = Ti.UI.createButton({
-	title : "Scroll Through Recipes",
+	title : "Saved Recipes",
 	font: {fontSize: 30, fontFamily: "Roboto"   },
-	color : "black",
+	color : "#A32929",
 	width: "50%",
 	height : "7%",
 	name : "next"
@@ -204,18 +208,11 @@ win3.add(sheNameV);
 win3.add(retRec);
 win3.add(next);
 
-recScroll.add(nameLabel);
-recScroll.add(recLabel);
+recScroll.add(nameLabel2);
+recScroll.add(recLabel2);
 
 win4.add(recScroll);
 win4.add(backV);
-var changeUi = function(recipe,i){
- 			i++;
-
-	
-	runUi2(recipe,i);
-};	
-var runUi2 = function(recipe,i){
 console.log("runUi2 " + recipe,i);	
 baseNameL.text = recipe[i].baseName;	
 conNameL.text = recipe[i].condimentName;
@@ -223,6 +220,16 @@ mixNameL.text = recipe[i].mixinName;
 seaNameL.text = recipe[i].seasoningName;
 sheNameL.text = recipe[i].shellName;
 
+if (Ti.Platform.osname === "android") {
+win3.backgroundColor =  ("#F8F5E1");
+win4.backgroundColor =  ("#F8F5E1");
+recScroll.width = "90%";
+} else {
+
+	win3.backgroundImage  = "/images/background.jpg";
+	win4.backgroundImage  = "/images/background.jpg";
+	recScroll.width = "50%";
+};	
 win3.open();
 
 backV.addEventListener("click", function(e){
@@ -239,8 +246,8 @@ win3.addEventListener('click', function(e){
 		
 		win3.close();
 	
-		nameLabel.text = recipe[i].baseName;
-		recLabel.text = recipe[i].baseRecipe;
+		nameLabel2.text = recipe[i].baseName;
+		recLabel2.text = recipe[i].baseRecipe;
 		
 		win4.open();
 	};
@@ -248,8 +255,8 @@ win3.addEventListener('click', function(e){
 		console.log( "con Name");
 		
 		win3.close();
-		nameLabel.text = recipe[i].condimentName;
-		recLabel.text = recipe[i].condimentRecipe;
+		nameLabel2.text = recipe[i].condimentName;
+		recLabel2.text = recipe[i].condimentRecipe;
 		
 		win4.open();
 	};
@@ -258,8 +265,8 @@ win3.addEventListener('click', function(e){
 		
 		win3.close();
 		
-		nameLabel.text = recipe[i].mixinName;
-		recLabel.text = recipe[i].mixinRecipe;
+		nameLabel2.text = recipe[i].mixinName;
+		recLabel2.text = recipe[i].mixinRecipe;
 		
 		win4.open();
 	};
@@ -268,8 +275,8 @@ win3.addEventListener('click', function(e){
 		
 		win3.close();
 		
-		nameLabel.text = recipe[i].seasoningName;
-		recLabel.text = recipe[i].seasoningRecipe;
+		nameLabel2.text = recipe[i].seasoningName;
+		recLabel2.text = recipe[i].seasoningRecipe;
 		
 		win4.open();
 	};
@@ -279,8 +286,8 @@ win3.addEventListener('click', function(e){
 		
 		win3.close();
 		
-		nameLabel.text = recipe[i].shellName;
-		recLabel.text = recipe[i].shellRecipe;
+		nameLabel2.text = recipe[i].shellName;
+		recLabel2.text = recipe[i].shellRecipe;
 		
 		win4.open();
 	};

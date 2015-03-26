@@ -2,7 +2,7 @@
 <launchConfiguration type="com.appcelerator.titanium.mobile.ui.android.simulator.launchConfigurationType">
 <stringAttribute key="ATTR_PROJECT_NAME" value="Taco"/>
 <stringAttribute key="abi" value="armeabi"/>
-<stringAttribute key="device-id" value="GalaxyNexus"/>
+<stringAttribute key="device-id" value="one"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/Taco"/>
 </listAttribute>

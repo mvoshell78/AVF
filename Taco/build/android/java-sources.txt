@@ -1,8 +1,0 @@
-"/Users/Mich/Desktop/AVF/Taco/build/android/gen/android/support/v7/appcompat/R.java"
-"/Users/Mich/Desktop/AVF/Taco/build/android/gen/com/voshell/taco/ApplicationStylesheet.java"
-"/Users/Mich/Desktop/AVF/Taco/build/android/gen/com/voshell/taco/AssetCryptImpl.java"
-"/Users/Mich/Desktop/AVF/Taco/build/android/gen/com/voshell/taco/R.java"
-"/Users/Mich/Desktop/AVF/Taco/build/android/gen/com/voshell/taco/TacoActivity.java"
-"/Users/Mich/Desktop/AVF/Taco/build/android/gen/com/voshell/taco/TacoAppInfo.java"
-"/Users/Mich/Desktop/AVF/Taco/build/android/gen/com/voshell/taco/TacoApplication.java"
-"/Users/Mich/Desktop/AVF/Taco/build/android/gen/ti/modules/titanium/ui/R.java"

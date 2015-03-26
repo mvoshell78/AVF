@@ -28,8 +28,8 @@ var readFav = function(){
 		dbResult.next();
 		
 	}
-	console.log("localData" + saveArray[i]);
-	console.log("rowCount " + i);
+	//console.log("localData" + saveArray[i]);
+	//console.log("rowCount " + i);
 	dbResult.close();
 	db.close();
 	favUi.runUi2(saveArray,i);
@@ -39,7 +39,7 @@ var readFav = function(){
 
 
 var storeFav = function(recipe){
-console.log("favData ", recipe);
+//console.log("favData ", recipe);
 
 var db = Ti.Database.open("recipeDB");
 
@@ -48,7 +48,7 @@ db.execute("CREATE TABLE IF NOT EXISTS favTBL (id INTEGER PRIMARY KEY, baseName 
 db.execute("INSERT INTO favTBL(baseName, baseUrl, baseRecipe, condimentName, condimentRecipe, condimentUrl, mixinName, mixinRecipe, mixinUrl, seasoningName, seasoningRecipe, seasoningUrl, shellName, shellRecipe) VALUES (?,?,?, ?,?,?, ?,?,?, ?,?,?, ?,?)",recipe.baseName, recipe.baseUrl, recipe.baseRecipe, recipe.condimentName, recipe.condimentRecipe, recipe.condimentUrl, recipe.mixinName, recipe.mixinRecipe, recipe.mixinUrl, recipe.seasoningName, recipe.seasoningRecipe, recipe.seasoningUrl, recipe.shellName, recipe.shellRecipe);
 	
 	var rowId = db.lastInsertRowId;
-		console.log("rowId" + rowId);
+		//console.log("rowId" + rowId);
 		db.close();
 
 readFav();

@@ -47,7 +47,7 @@ db.execute("DELETE FROM recipeTBL");
 db.execute("INSERT INTO recipeTBL(baseName, baseUrl, baseRecipe, condimentName, condimentRecipe, condimentUrl, mixinName, mixinRecipe, mixinUrl, seasoningName, seasoningRecipe, seasoningUrl, shellName, shellRecipe) VALUES (?,?,?, ?,?,?, ?,?,?, ?,?,?, ?,?)",recipe.baseName, recipe.baseUrl, recipe.baseRecipe, recipe.condimentName, recipe.condimentRecipe, recipe.condimentUrl, recipe.mixinName, recipe.mixinRecipe, recipe.mixinUrl, recipe.seasoningName, recipe.seasoningRecipe, recipe.seasoningUrl, recipe.shellName, recipe.shellRecipe);
 	
 	var rowId = db.lastInsertRowId;
-		console.log(rowId);
+		//console.log(rowId);
 		db.close();
 
 readData();

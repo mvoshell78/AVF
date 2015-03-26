@@ -17,7 +17,7 @@ public final class TacoAppInfo implements ITiAppInfo
 	}
 
 	public String getDeployType() {
-		return "test";
+		return "development";
 	}
 
 	public String getId() {

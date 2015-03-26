@@ -9,7 +9,7 @@ var ui = require("ui");
 
 var ifNet = function(){
 if (Ti.Network.online){
-	console.log("online");
+	//console.log("online");
 	var cloud = require("cloud");
 	cloud.loginCloud();
 	
